@@ -12,7 +12,7 @@ def weather_by_city(city_name):
     }
     try:
         result = requests.get(weather_url, params = params)
-        result = raise_for_status()
+        #result = raise_for_status()
         weather = result.json()
         if 'data' in weather:
             if 'current_condition' in weather['data']:
@@ -28,7 +28,4 @@ def weather_by_city(city_name):
 
 if __name__ == "__main__":    
     print(weather_by_city("Moscow, Russia"))
-
-print(current_app.config['WEATHER_URL'])
-
-
+    
